@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+        <!-- 是否启用开发模式 -->
+        <constant name="struts.devMode" value="true" />
+        <!-- 设置在class被修改时是否热加载，发布时要设置为false -->
+        <constant name="struts.convention.classes.reload" value="true" />
+        <constant name="struts.convention.exclude.parentClassLoader" value="false" />
+        <!-- 使用struts-default默认的转换器，如果是rest的使用：rest-default，rest需要rest的jar插件 -->
+        <constant name="struts.convention.default.parent.package" value="app" />
+        <!-- 所有匹配*.action的请求都由struts2处理 -->
+        <constant name="struts.action.extension" value=",,action"/>
+        <!--设置struts2默认的locale，决定使用哪个资源文件-->
+        <constant name="struts.locale" value="de_DE"/>
+        <!-- 请求参数的编码方式 -->
+        <constant name="struts.i18n.encoding" value="UTF-8"/>
+        <!-- 是否自动加载国际化资源文件  -->
+        <constant name="struts.i18n.reload" value="true"/>
+        <!--（默认false）设置是否总是以自动装配策略创建对象-->
+        <constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+        <!-- 让struts2支持动态方法调用 -->
+        <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+        <!--让Struts2拦截器不去拦截特定的页面所发出的请求-->
+        <constant name="struts.action.excludePattern" value="/js/ueditor/jsp/.*" />
+        <!--Struts2默认临时文件存储位置-->
+        <constant name="struts.multipart.saveDir" value="/tmp"/>
+        <!--这里的name一定要写成app,因为前面struts.convention.default.parent.package 已经设置成了app，差点没把我坑死-->
+        <package name="app"  extends="struts-default">
+
+        </package>
+
+
+</struts>
